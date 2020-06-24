@@ -17,7 +17,7 @@ div.uk-navbar-container.tm-navbar-container(uk-sticky="cls-active: tm-navbar-con
         ul.uk-navbar-nav
           each item in navbarMenu
             li
-              a(href= item.href)= item.name
+              a(href= item.href)= item.cn
                 if item.items
                   +icon('chevron-down', '.75')(class="uk-margin-xsmall-left")
               if item.items
@@ -51,31 +51,7 @@ div.uk-navbar-container.tm-navbar-container(uk-sticky="cls-active: tm-navbar-con
                                     li
                                       a(href="subcategory.html")= subcategory
 
-                  if item.name === "Brands"
-                    div.uk-container.uk-container-small.uk-margin-top.uk-margin-bottom
-                      ul.uk-grid-small.uk-child-width-1-6(uk-grid)
-                        each brand in item.items
-                          li
-                            div.tm-ratio.tm-ratio-4-3
-                              a(class="uk-link-muted " +
-                                      "uk-text-center " +
-                                      "uk-display-block " +
-                                      "uk-padding-small " +
-                                      "uk-box-shadow-hover-large " +
-                                      "tm-media-box"
-                                href="#"
-                                title= brand.name)
-                                figure.tm-media-box-wrap
-                                  img(src= brand.image alt= brand.name)
-                      div.uk-text-center.uk-margin
-                        +link-to-all('See all brands', item.href)
 
-                  if item.name === "Pages"
-                    div.uk-container.uk-container-small.uk-margin-top.uk-margin-bottom
-                      ul.uk-nav.uk-nav-default.uk-column-1-3
-                        each page in item.items
-                          li
-                            a(href= page.href)= page.name
 
     div.uk-navbar-right
 
@@ -96,35 +72,6 @@ div.uk-navbar-container.tm-navbar-container(uk-sticky="cls-active: tm-navbar-con
             div.uk-width-auto
               a.uk-navbar-dropdown-close(href="#" uk-close)
 
-      //- Compare
-      a(class="uk-navbar-item uk-link-muted uk-visible@m tm-navbar-button"
-        href="compare.html")
-        span(uk-icon="copy")
-        span.uk-badge 3
-
-      //- User
-      a.uk-navbar-item.uk-link-muted.tm-navbar-button(href="account.html" uk-icon="user")
-      div(class="uk-padding-small uk-margin-remove"
-          uk-dropdown="pos: bottom-right; offset: -10; delay-hide: 200;"
-          style="min-width: 150px;")
-        ul.uk-nav.uk-dropdown-nav
-          li
-            a(href="account.html") Orders
-              |
-              |
-              span (2)
-          li
-            a(href="favorites.html") Favorites
-              |
-              |
-              span (3)
-          li
-            a(href="personal.html") Personal
-          li
-            a(href="settings.html") Settings
-          li.uk-nav-divider
-          li
-            a(href="#") Log out
 
       //- Cart
       a.uk-navbar-item.uk-link-muted.tm-navbar-button(

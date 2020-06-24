@@ -1,2 +1,5 @@
+.ptp-sync*
+.DS_Store
 dest
 node_modules
+/.ptp-sync/
