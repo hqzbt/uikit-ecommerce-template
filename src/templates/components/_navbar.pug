@@ -13,6 +13,14 @@ div.uk-navbar-container.tm-navbar-container(uk-sticky="cls-active: tm-navbar-con
         img(src="images/logo.svg" width="90" height="32" alt="Logo")
 
 
-
+      //- Navigation
+      nav(class="uk-visible@m")
+        ul.uk-navbar-nav
+          each item in navbarMenu
+            li
+              a(href= item.href)= item.name
+                if item.items
+                  +icon('chevron-down', '.75')(class="uk-margin-xsmall-left")
+                  
     div.uk-navbar-right
 

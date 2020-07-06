@@ -1,0 +1,81 @@
+extends /layouts/_article
+
+block vars
+  -
+    page = {
+      title: '资质',
+      breadcrumbs: {}
+    }
+
+block article
+  div
+    article(class="uk-card " +
+                  "uk-card-default " +
+                  "uk-card-body " +
+                  "uk-article " +
+                  "tm-ignore-container")
+
+      header.uk-text-center
+        //- Title
+        h1.uk-article-title= page.title
+
+      div.uk-article-body
+        h2.uk-text-center 公司荣誉
+        div(class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m"
+            uk-grid)
+          div
+            div.uk-grid-small.uk-flex-middle(uk-grid)
+              div
+                img(src="http://lywxbz.dl2.lcweb01.cn/uploadfile/20150410/20150410093102_48875.jpg"
+                    alt="Thomas Bruns"
+                    width="380"
+                    height="380")
+              div.uk-width-expand
+                div 资质文件1
+          div
+            div.uk-grid-small.uk-flex-middle(uk-grid)
+              div
+                img(src="http://lywxbz.dl2.lcweb01.cn/uploadfile/20150410/20150410093102_48875.jpg"
+                    alt="George Clanton"
+                    width="380"
+                    height="380")
+              div.uk-width-expand
+                div 资质文件2
+          div
+            div.uk-grid-small.uk-flex-middle(uk-grid)
+              div
+                img(src="http://lywxbz.dl2.lcweb01.cn/uploadfile/20150410/20150410093102_48875.jpg"
+                    alt="Martin Cade"
+                    width="380"
+                    height="380")
+              div.uk-width-expand
+                div 资质文件3
+          div
+            div.uk-grid-small.uk-flex-middle(uk-grid)
+              div
+                img(src="http://lywxbz.dl2.lcweb01.cn/uploadfile/20150410/20150410093102_48875.jpg"
+                    alt="Carol Issa"
+                    width="380"
+                    height="380")
+              div.uk-width-expand
+                div 资质文件4
+          div
+            div.uk-grid-small.uk-flex-middle(uk-grid)
+              div
+                img(src="http://lywxbz.dl2.lcweb01.cn/uploadfile/20150410/20150410093102_48875.jpg"
+                    alt="Patricia Kirk"
+                    width="380"
+                    height="380")
+              div.uk-width-expand
+                div 资质文件5
+          div
+            div.uk-grid-small.uk-flex-middle(uk-grid)
+              div
+                img(src="http://lywxbz.dl2.lcweb01.cn/uploadfile/20150410/20150410093102_48875.jpg"
+                    alt="Nicole Yokoyama"
+                    width="380"
+                    height="380")
+              div.uk-width-expand
+                div 资质文件6
+
+

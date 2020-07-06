@@ -1,0 +1,26 @@
+extends /layouts/_article
+
+block vars
+  -
+    page = {
+      title: '联系我们',
+      breadcrumbs: {}
+    }
+
+block article
+  div
+    article(class="uk-card " +
+                  "uk-card-default " +
+                  "uk-card-body " +
+                  "uk-article " +
+                  "tm-ignore-container")
+
+      header.uk-text-center
+        //- Title
+        h1.uk-article-title= page.title
+
+        h2.uk-text-center 商铺
+        figure
+          div.uk-text-bolder= shopInfo.storeName
+          div!= shopInfo.address
+          div= shopInfo.openingHours
