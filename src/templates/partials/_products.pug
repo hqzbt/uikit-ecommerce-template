@@ -17,16 +17,7 @@ div.uk-grid-medium.uk-child-width-1-1(uk-grid)
                       "uk-flex-left@s " +
                       "uk-text-small")
 
-              span.uk-margin-small-right.uk-text-muted Sort by:
 
-              ul.uk-subnav.uk-margin-remove
-                li.uk-active.uk-padding-remove
-                  a.uk-text-lowercase(href="#") relevant
-                    +icon("chevron-down", ".5")(class="uk-margin-xsmall-left")
-                li
-                  a.uk-text-lowercase(href="#") price
-                li
-                  a.uk-text-lowercase(href="#") newest
 
             //- Filters button & change view
             div(class="uk-width-1-1 uk-width-auto@s uk-flex uk-flex-center uk-flex-middle")
@@ -60,21 +51,3 @@ div.uk-grid-medium.uk-child-width-1-1(uk-grid)
             each product in products
               +product(product)
 
-        //- Load more
-        div
-          button.uk-button.uk-button-default.uk-button-large.uk-width-1-1(
-            style="border-top-left-radius: 0; border-top-right-radius: 0;")
-            +icon("plus", ".75")(class="uk-margin-small-right")
-            span Load more
-
-  //- Pagination
-  div
-    ul.uk-pagination.uk-flex-center
-      li.uk-active: span 1
-      li: a(href="#") 2
-      li: a(href="#") 3
-      li: a(href="#") 4
-      li: a(href="#") 5
-      li.uk-disabled: span …
-      li: a(href="#") 20
-      li: a(href="#"): span(uk-pagination-next)

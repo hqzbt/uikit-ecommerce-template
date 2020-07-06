@@ -7,9 +7,6 @@ block vars
     page = {
       title: product.name,
       breadcrumbs: {
-        'Catalog': 'catalog.html',
-        'Laptops & Tablets': 'category.html',
-        'Laptops': 'subcategory.html'
       }
     }
 
@@ -110,30 +107,15 @@ block pages
                     div
                       each status in product.statuses
                         case status
-                          when "new"
-                            span.uk-label.uk-label-success.uk-margin-xsmall-right= status
-                          when "top selling"
-                            span.uk-label.uk-label-warning.uk-margin-xsmall-right= status
-                          when "trade-in"
-                            span.uk-label.uk-label-danger.uk-margin-xsmall-right= status
+                          when "新款"
+                            span.uk-label.uk-label-success.uk-margin-xsmall-right= "新款"
+                          when "热销"
+                            span.uk-label.uk-label-warning.uk-margin-xsmall-right= "热销"
+                          when "底价售"
+                            span.uk-label.uk-label-danger.uk-margin-xsmall-right= "底价售"
                           default
                             span.uk-label= status
 
-              //- Variations
-              if product.statuses
-                div.uk-margin
-                  div.uk-grid-medium(uk-grid)
-                    each variation in product.variations
-                      div
-                        div.uk-text-small.uk-margin-xsmall-bottom= variation.name
-                        ul.uk-subnav.uk-subnav-pill.tm-variations(uk-switcher)
-                          each value in variation.values
-                            li
-                              if variation.name === "Color"
-                                a.tm-variation-color(uk-tooltip= value.name)
-                                  div(style="background-color: " + value.value)
-                              else
-                                a= value.name
 
               //- Shop
               div.uk-margin
@@ -149,34 +131,6 @@ block pages
                           del.uk-text-meta= product.oldPrice
                           div.tm-product-price= product.price
 
-                    //- Add to cart
-                    if !product.isNotAvailable
-                      div
-                        div.uk-grid-small(uk-grid)
-
-                          //- Quantity
-                          div
-                            +quantity(product.id)
-
-                          //- Add to cart button
-                          div
-                            button(class="uk-button " +
-                                         "uk-button-primary " +
-                                         "tm-product-add-button " +
-                                         "tm-shine " +
-                                         "js-add-to-cart") add to cart
-
-                          //- Actions buttons
-                          div(class="uk-width-auto uk-width-expand@s uk-flex uk-flex-middle uk-text-meta")
-                            a.uk-margin-small-right.js-add-to.js-add-to-favorites(
-                              class= { "tm-action-button-active js-added-to": product.isAddedToFavorites }
-                              uk-tooltip="Add to favorites")
-                              +icon("heart")
-                            a.js-add-to.js-add-to-compare(
-                              class= { "tm-action-button-active js-added-to": product.isAddedToCompare }
-                              uk-tooltip="Add to compare")
-                              +icon("copy")
-
 
               //- Properties
               div.uk-margin
@@ -186,12 +140,5 @@ block pages
                       li
                         span.uk-text-muted= property + ": "
                         span!= value
-                  div.uk-margin-small-top
-                    a.uk-link-heading.js-scroll-to-description(
-                      href="#description"
-                      onclick="UIkit.switcher('.js-product-switcher').show(1);")
-                      span.tm-pseudo Detailed specifications
-                      +icon("chevron-down", ".75")(class="uk-margin-xsmall-left")
-
 
 

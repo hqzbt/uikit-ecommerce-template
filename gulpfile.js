@@ -151,6 +151,7 @@ gulp.task('build', gulp.parallel(
   'html',
   'styles',
   'scripts',
+  'images',
   'copy'
 ));
 
